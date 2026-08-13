@@ -13,6 +13,7 @@ add_executable(TransportMaster src/main.cpp
         src/game/game.hpp
         src/world/world.hpp
         src/world/world.cpp
+        src/world/ids.hpp
 )
 
 find_package(raylib CONFIG REQUIRED)
