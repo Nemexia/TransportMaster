@@ -1,12 +1,5 @@
-#include <raylib.h>
+#include "application/application.hpp"
 int main() {
-    InitWindow(800, 600, "TransportMaster");
-    SetTargetFPS(60);
-    while (!WindowShouldClose()) {
-        BeginDrawing();
-        ClearBackground(RAYWHITE);
-        EndDrawing();
-    }
-    CloseWindow();
-    return 0;
+    game::Application app;
+    return app.run();
 }

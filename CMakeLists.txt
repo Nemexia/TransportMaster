@@ -7,6 +7,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(TransportMaster src/main.cpp
+        src/application/application.cpp
+        src/application/application.hpp
 )
 
 find_package(raylib CONFIG REQUIRED)
