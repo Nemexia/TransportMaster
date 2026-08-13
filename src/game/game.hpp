@@ -1,4 +1,5 @@
 #pragma once
+#include "../graphics/renderer.hpp"
 #include "../world/world.hpp"
 namespace game {
 class Game {
@@ -8,5 +9,6 @@ class Game {
 
   private:
     World world_;
+    Renderer renderer_;
 };
 }  // namespace game

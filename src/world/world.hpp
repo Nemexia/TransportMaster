@@ -11,6 +11,7 @@ class World {
     StationId create_station(Position position);
     Station& station(StationId id);
     const Station& station(StationId id) const;
+    const std::vector<Station>& stations() const;
 
   private:
     std::vector<Station> station_;

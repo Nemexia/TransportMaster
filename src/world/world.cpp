@@ -14,3 +14,7 @@ game::Station& game::World::station(game::StationId id) {
 const game::Station& game::World::station(game::StationId id) const {
     return station_.at(id.value);
 }
+
+const std::vector<game::Station>& game::World::stations() const {
+    return station_;
+}
