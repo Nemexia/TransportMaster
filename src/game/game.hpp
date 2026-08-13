@@ -4,6 +4,7 @@
 namespace game {
 class Game {
   public:
+    Game();
     void update();
     void draw();
 
