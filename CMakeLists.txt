@@ -15,6 +15,8 @@ add_executable(TransportMaster src/main.cpp
         src/world/world.cpp
         src/world/ids.hpp
         src/world/position.hpp
+        src/world/station.hpp
+        src/world/station.cpp
 )
 
 find_package(raylib CONFIG REQUIRED)
