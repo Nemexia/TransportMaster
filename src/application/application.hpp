@@ -1,4 +1,5 @@
 #pragma once
+#include "../game/game.hpp"
 namespace game {
 class Application {
   public:
@@ -7,5 +8,7 @@ class Application {
   private:
     void initialize();
     void shutdown();
+
+    Game game_;
 };
 }  // namespace game

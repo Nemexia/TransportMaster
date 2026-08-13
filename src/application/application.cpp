@@ -5,8 +5,9 @@
 int game::Application::run() {
     initialize();
     while (!WindowShouldClose()) {
+        game_.update();
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+        game_.draw();
         EndDrawing();
     }
     shutdown();

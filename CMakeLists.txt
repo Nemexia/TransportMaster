@@ -9,6 +9,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_executable(TransportMaster src/main.cpp
         src/application/application.cpp
         src/application/application.hpp
+        src/game/game.cpp
+        src/game/game.hpp
 )
 
 find_package(raylib CONFIG REQUIRED)
