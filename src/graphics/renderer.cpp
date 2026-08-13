@@ -7,6 +7,21 @@
 void game::Renderer::draw(const game::World& world) {
     ClearBackground(RAYWHITE);
 
+    for (const Route& route : world.routes()) {
+        const auto& stations = route.stations();
+
+        if (stations.size() < 2) {
+            continue;
+        }
+
+        for (std::size_t i = 0; i < stations.size(); ++i) {
+            const std::size_t next = route.next_station(i);
+            const auto a = world.station(stations[i]).position();
+            const auto b = world.station(stations[next]).position();
+            DrawLine(a.x, a.y, b.x, b.y, GREEN);
+        }
+    }
+
     for (const Station& station : world.stations()) {
         constexpr int size = 10;
         constexpr int offset = size / 2;
