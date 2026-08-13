@@ -15,6 +15,6 @@ class World {
 
   private:
     std::vector<Station> station_;
-    std::uint32_t next_station_id_;
+    std::uint32_t next_station_id_{};
 };
 }  // namespace game
