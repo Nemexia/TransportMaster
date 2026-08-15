@@ -1,4 +1,6 @@
 #pragma once
+#include <vector>
+
 #include "ids.hpp"
 #include "position.hpp"
 namespace game {
@@ -9,8 +11,13 @@ class Station {
     StationId id() const;
     Position position() const;
 
+    void add_route(RouteId route);
+    const std::vector<RouteId>& routes() const;
+
   private:
     StationId id_;
     Position position_;
+
+    std::vector<RouteId> route_;
 };
 }  // namespace game

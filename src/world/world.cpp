@@ -37,4 +37,10 @@ const std::vector<Route>& World::routes() const {
     return route_;
 }
 
+void World::add_station_to_route(RouteId route_id, StationId station_id) {
+    Route& r = route(route_id);
+    Station& s = station(station_id);
+    r.add_station(station_id);
+    s.add_route(route_id);
+}
 }  // namespace game

@@ -10,8 +10,9 @@ class World {
   public:
     void update();
 
-    StationId create_station(Position position);
-    RouteId create_route();
+    StationId add_station(Position position);
+    void add_station_to_route(RouteId route_id, StationId station_id);
+    RouteId add_route();
 
     Station& station(StationId id);
     const Station& station(StationId id) const;
