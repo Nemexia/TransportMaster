@@ -3,8 +3,8 @@
 #include <raylib.h>
 
 #include "../world/world.hpp"
-
-void game::Renderer::draw(const game::World& world) {
+namespace game {
+void Renderer::draw(const World& world) {
     ClearBackground(RAYWHITE);
 
     for (const Route& route : world.routes()) {
@@ -29,3 +29,4 @@ void game::Renderer::draw(const game::World& world) {
         DrawRectangle(position.x - offset, position.y - offset, size, size, BLACK);
     }
 }
+}  // namespace game

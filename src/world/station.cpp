@@ -1,12 +1,14 @@
 #include "station.hpp"
 
-game::Station::Station(game::StationId id, game::Position position)
-    : id_(id), position_(position) {}
+namespace game {
+Station::Station(StationId id, Position position) : id_(id), position_(position) {}
 
-game::StationId game::Station::id() const {
+StationId Station::id() const {
     return id_;
 }
 
-game::Position game::Station::position() const {
+Position Station::position() const {
     return position_;
 }
+
+}  // namespace game

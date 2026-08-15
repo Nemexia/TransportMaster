@@ -1,6 +1,6 @@
 #include "game.hpp"
-
-game::Game::Game() {
+namespace game {
+Game::Game() {
     const StationId station1 = world_.create_station({400, 300});
     const StationId station2 = world_.create_station({400, 400});
     const StationId station3 = world_.create_station({400, 200});
@@ -16,10 +16,11 @@ game::Game::Game() {
     world_.route(route1).add_station(station1);
 }
 
-void game::Game::update() {
+void Game::update() {
     world_.update();
 }
 
-void game::Game::draw() {
+void Game::draw() {
     renderer_.draw(world_);
 }
+}  // namespace game

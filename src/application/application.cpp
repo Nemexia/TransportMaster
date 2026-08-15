@@ -1,8 +1,8 @@
 #include "application.hpp"
 
 #include <raylib.h>
-
-int game::Application::run() {
+namespace game {
+int Application::run() {
     initialize();
     while (!WindowShouldClose()) {
         game_.update();
@@ -14,11 +14,12 @@ int game::Application::run() {
     return 0;
 }
 
-void game::Application::initialize() {
+void Application::initialize() {
     InitWindow(800, 600, "TransportMaster");
     SetTargetFPS(60);
 }
 
-void game::Application::shutdown() {
+void Application::shutdown() {
     CloseWindow();
 }
+}  // namespace game
