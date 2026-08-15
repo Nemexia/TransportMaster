@@ -40,6 +40,9 @@ const std::vector<Route>& World::routes() const {
 void World::add_station_to_route(RouteId route_id, StationId station_id) {
     Route& r = route(route_id);
     Station& s = station(station_id);
+    if (r.stations().back().value == station_id.value) {
+        return;
+    }
     r.add_station(station_id);
     s.add_route(route_id);
 }
