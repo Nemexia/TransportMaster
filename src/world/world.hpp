@@ -24,8 +24,8 @@ class World {
     const std::vector<Route>& routes() const;
 
   private:
-    std::vector<Station> station_;
-    std::vector<Route> route_;
+    std::vector<Station> stations_;
+    std::vector<Route> routes_;
 
     std::uint32_t next_station_id_{};
     std::uint32_t next_route_id_{};
