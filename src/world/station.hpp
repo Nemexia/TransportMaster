@@ -18,6 +18,6 @@ class Station {
     StationId id_;
     Position position_;
 
-    std::vector<RouteId> route_;
+    std::vector<RouteId> routes_;
 };
 }  // namespace game

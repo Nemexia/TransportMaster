@@ -12,10 +12,10 @@ Position Station::position() const {
 }
 
 void Station::add_route(RouteId route) {
-    route_.push_back(route);
+        routes_.push_back(route);
 }
 
 const std::vector<RouteId>& Station::routes() const {
-    return route_;
+    return routes_;
 }
 }  // namespace game
