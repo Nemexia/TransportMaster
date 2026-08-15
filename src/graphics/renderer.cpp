@@ -14,7 +14,7 @@ void Renderer::draw(const World& world) {
             continue;
         }
 
-        for (std::size_t i = 0; i < station_ids.size(); ++i) {
+        for (std::size_t i = 0; i < route.stop_count(); ++i) {
             const RouteStopIndex current{i};
             const RouteStopIndex next = route.next_station(current);
             const Position a = world.station(route.station_at(current)).position();

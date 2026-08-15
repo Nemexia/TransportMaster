@@ -26,4 +26,9 @@ StationId Route::station_at(RouteStopIndex index) const {
     assert(index.value < stations_.size());
     return stations_[index.value];
 }
+
+std::size_t Route::stop_count() const
+{
+    return stations_.size();
+}
 }  // namespace game

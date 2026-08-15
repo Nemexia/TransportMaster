@@ -11,6 +11,7 @@ class Route {
     const std::vector<StationId>& stations() const;
     RouteStopIndex next_station(RouteStopIndex index) const;
     StationId station_at(RouteStopIndex index) const;
+    std::size_t stop_count() const;
 
   private:
     RouteId id_;
