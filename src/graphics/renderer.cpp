@@ -8,16 +8,17 @@ void Renderer::draw(const World& world) {
     ClearBackground(RAYWHITE);
 
     for (const Route& route : world.routes()) {
-        const auto& stations = route.stations();
+        const auto& station_ids = route.stations();
 
-        if (stations.size() < 2) {
+        if (station_ids.size() < 2) {
             continue;
         }
 
-        for (std::size_t i = 0; i < stations.size(); ++i) {
-            const std::size_t next = route.next_station(i);
-            const auto a = world.station(stations[i]).position();
-            const auto b = world.station(stations[next]).position();
+        for (std::size_t i = 0; i < station_ids.size(); ++i) {
+            const RouteStopIndex current{i};
+            const RouteStopIndex next = route.next_station(current);
+            const Position a = world.station(route.station_at(current)).position();
+            const Position b = world.station(route.station_at(next)).position();
             DrawLine(a.x, a.y, b.x, b.y, GREEN);
         }
     }

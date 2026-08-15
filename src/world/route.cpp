@@ -16,9 +16,14 @@ const std::vector<StationId>& Route::stations() const {
     return stations_;
 }
 
-std::size_t Route::next_station(std::size_t index) const {
+RouteStopIndex Route::next_station(RouteStopIndex index) const {
     assert(!stations_.empty());
-    assert(index < stations_.size());
-    return (index + 1) % stations_.size();
+    assert(index.value < stations_.size());
+    return RouteStopIndex{(index.value + 1) % stations_.size()};
+}
+
+StationId Route::station_at(RouteStopIndex index) const {
+    assert(index.value < stations_.size());
+    return stations_[index.value];
 }
 }  // namespace game

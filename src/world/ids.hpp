@@ -1,4 +1,5 @@
 #pragma once
+#include <cstddef>
 #include <cstdint>
 namespace game {
 struct StationId {
@@ -16,4 +17,9 @@ struct BusId {
 struct PassengerId {
     std::uint32_t value;
 };
+
+struct RouteStopIndex {
+    std::size_t value;
+};
+
 }  // namespace game

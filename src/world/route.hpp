@@ -9,7 +9,8 @@ class Route {
     RouteId id() const;
     void add_station(StationId station);
     const std::vector<StationId>& stations() const;
-    std::size_t next_station(std::size_t index) const;
+    RouteStopIndex next_station(RouteStopIndex index) const;
+    StationId station_at(RouteStopIndex index) const;
 
   private:
     RouteId id_;
