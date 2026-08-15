@@ -14,6 +14,8 @@ Game::Game() {
     world_.add_station_to_route(route1, station4);
     world_.add_station_to_route(route1, station3);
     world_.add_station_to_route(route1, station1);
+
+    const BusId bus1 = world_.add_bus(route1);
 }
 
 void Game::update() {

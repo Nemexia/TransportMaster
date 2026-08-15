@@ -14,6 +14,13 @@ RouteId World::add_route() {
     return id;
 }
 
+BusId World::add_bus(RouteId route_id) {
+    route(route_id);
+    BusId id{next_bus_id_++};
+    buses_.emplace_back(id, route_id);
+    return id;
+}
+
 Station& World::station(StationId id) {
     return stations_.at(id.value);
 }
@@ -29,12 +36,24 @@ const Route& World::route(RouteId id) const {
     return routes_.at(id.value);
 }
 
+Bus& World::bus(BusId id) {
+    return buses_.at(id.value);
+}
+
+const Bus& World::bus(BusId id) const {
+    return buses_.at(id.value);
+}
+
 const std::vector<Station>& World::stations() const {
     return stations_;
 }
 
 const std::vector<Route>& World::routes() const {
     return routes_;
+}
+
+const std::vector<Bus>& World::buses() const {
+    return buses_;
 }
 
 void World::add_station_to_route(RouteId route_id, StationId station_id) {
