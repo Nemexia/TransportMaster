@@ -1,0 +1,10 @@
+# Build
+build/
+
+# IDE
+.vs/
+.vscode/
+.idea/
+
+# Package Manager
+vcpkg_installed/

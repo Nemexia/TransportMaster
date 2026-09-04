@@ -1,0 +1,11 @@
+{
+  "dependencies": [
+    "raylib"
+  ],
+  "overrides": [
+    {
+      "name": "raylib",
+      "version": "5.5#1"
+    }
+  ]
+}

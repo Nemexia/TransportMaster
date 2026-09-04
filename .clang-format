@@ -1,0 +1,138 @@
+Language: Cpp
+BasedOnStyle: LLVM
+
+# General
+Standard: Latest
+
+UseTab: Never
+IndentWidth: 4
+TabWidth: 4
+ContinuationIndentWidth: 4
+
+ColumnLimit: 120
+
+MaxEmptyLinesToKeep: 1
+KeepEmptyLines:
+  AtStartOfBlock: false
+  AtStartOfFile: false
+  AtEndOfFile: false
+
+# Braces
+BreakBeforeBraces: Attach
+
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseExpressionOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortCompoundRequirementOnASingleLine: true
+AllowShortEnumsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortNamespacesOnASingleLine: false
+
+# Indentation
+IndentCaseLabels: false
+IndentCaseBlocks: false
+IndentGotoLabels: false
+IndentExternBlock: Indent
+IndentRequiresClause: true
+IndentWrappedFunctionNames: false
+
+AccessModifierOffset: -4
+
+NamespaceIndentation: None
+FixNamespaceComments: true
+
+# Pointer / Reference / Qualifiers
+DerivePointerAlignment: false
+PointerAlignment: Left
+ReferenceAlignment: Left
+QualifierAlignment: Leave
+
+# Functions / Calls
+BinPackArguments: true
+BinPackParameters: BinPack 
+BinPackLongBracedList: false
+
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+
+PenaltyReturnTypeOnItsOwnLine: 200
+
+# Template
+BreakTemplateDeclarations: Yes
+BreakBeforeConceptDeclarations: Always
+SpacesInAngles: Never
+
+# Constructors / Initializers
+PackConstructorInitializers: BinPack
+BreakConstructorInitializers: BeforeComma
+
+# Operators
+BreakBeforeBinaryOperators: NonAssignment
+AlignOperands: Align
+
+# Braced  initialization
+Cpp11BracedListStyle: FunctionCall
+AlignAfterOpenBracket: true
+
+# Alignment
+AlignConsecutiveAssignments:
+  Enabled: false
+
+AlignConsecutiveDeclarations:
+  Enabled: false
+
+AlignConsecutiveMacros:
+  Enabled: false
+
+AlignConsecutiveBitFields:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+
+AlignArrayOfStructures: Left
+AlignEscapedNewlines: Right
+AlignTrailingComments: true
+
+# Lambdas
+AllowShortLambdasOnASingleLine: Inline
+LambdaBodyIndentation: Signature
+
+# Includes
+IncludeBlocks: Regroup
+
+SortIncludes:
+  Enabled: true
+  IgnoreCase: false
+  IgnoreExtension: false
+
+# Comments:
+ReflowComments: Always
+CommentPragmas: '^ IWYU pragma:'
+
+# Preprocessor
+IndentPPDirectives: AfterHash
+
+# Miscellaneous
+SeparateDefinitionBlocks: Always
+SpaceBeforeParens: ControlStatements
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+SpaceAfterCStyleCast: false
+SpaceAfterTemplateKeyword: true
+
+# C++ Specific
+StatementMacros:
+  - Q_OBJECT
+  - Q_GADGET
+  - Q_NAMESPACE
+
+AttributeMacros:
+  - __attribute__
+
+# Preprocessor / macros
+MacroBlockBegin: ''
+MacroBlockEnd: ''
