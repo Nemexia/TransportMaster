@@ -12,7 +12,7 @@ add_executable(TransportMaster
 "src/application/application.h"
 "src/application/application.cpp"
 "src/game/game.h"
-)
+"src/game/game.cpp")
 
 find_package(raylib CONFIG REQUIRED)
 
