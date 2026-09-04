@@ -11,5 +11,6 @@ struct Station {
     Position position;
     std::string name;
     std::vector<PassengerId> passengers;
+    double spawn_chance;
 };
 } // namespace game
