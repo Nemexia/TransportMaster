@@ -1,50 +1,16 @@
 #pragma once
-#include <cstdint>
-#include <string>
-#include <vector>
+#include "state.h"
 
 namespace game {
-struct Position {
-    double x;
-    double y;
-};
-
-using StationId = std::uint32_t;
-using RouteId = std::uint32_t;
-using PassengerId = std::uint32_t;
-using BusId = std::uint32_t;
-
-struct Passenger {
-    StationId origin;
-    StationId destination;
-};
-
-struct Route {
-    RouteId id;
-    std::vector<StationId> stops;
-    std::vector<BusId> buses;
-};
-
-struct Station {
-    StationId id;
-    Position position;
-    std::string name;
-    std::vector<PassengerId> passengers;
-    std::vector<RouteId> routes;
-};
-
-struct Bus {
-    BusId id;
-    RouteId route;
-    std::vector<PassengerId> passengers;
-    double speed;
-};
-
-struct Game {
+class Game {
+public:
     Game();
-    std::vector<Station> stations;
-    std::vector<Route> routes;
-    std::vector<Bus> buses;
-    std::vector<Passenger> passengers;
+    StationId add_station(const Position& position, const std::string& name);
+    RouteId add_route(const std::vector<StationId>& stops, const Color& color);
+    BusId add_bus(RouteId route, double speed);
+    PassengerId add_passenger(StationId origin, StationId destination);
+
+private:
+    State state_;
 };
 } // namespace game

@@ -24,22 +24,23 @@ static void draw(const Game& game) {
             const auto& startStation = game.stations[route.stops[i]];
             const auto& endStation = game.stations[route.stops[i + 1]];
             DrawLine(static_cast<int>(startStation.position.x + 10), static_cast<int>(startStation.position.y + 10),
-                     static_cast<int>(endStation.position.x + 10), static_cast<int>(endStation.position.y + 10), GRAY);
+                     static_cast<int>(endStation.position.x + 10), static_cast<int>(endStation.position.y + 10),
+                     {route.color.r, route.color.g, route.color.b, 255});
         }
     }
 
     for (const auto& station : game.stations) {
-        DrawRectangle(static_cast<int>(station.position.x), static_cast<int>(station.position.y), 20, 20, BLACK);
+        DrawRectangle(static_cast<int>(station.position.x), static_cast<int>(station.position.y), 20, 20, ::BLACK);
         DrawText(station.name.c_str(), static_cast<int>(station.position.x), static_cast<int>(station.position.y) - 20,
-                 10, BLACK);
+                 10, ::BLACK);
         DrawText(std::to_string(station.passengers.size()).c_str(), static_cast<int>(station.position.x) + 5,
-                 static_cast<int>(station.position.y) + 5, 10, WHITE);
+                 static_cast<int>(station.position.y) + 5, 10, ::WHITE);
     };
 }
 
 void Application::render() {
     BeginDrawing();
-    ClearBackground(RAYWHITE);
+    ClearBackground(::RAYWHITE);
     draw(game_);
     EndDrawing();
 }
