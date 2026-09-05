@@ -26,12 +26,14 @@ RouteId Game::add_route(std::span<const StationId> stops, const Color& color) {
 BusId Game::add_bus(RouteId route, double speed) {
     BusId id = static_cast<BusId>(state_.buses.size());
     state_.buses.emplace_back(id, std::vector<PassengerId>{}, route, 0, 0.0, speed);
+    state_.routes[route].buses.push_back(id);
     return id;
 }
 
 PassengerId Game::add_passenger(StationId origin, StationId destination) {
     PassengerId id = static_cast<PassengerId>(state_.passengers.size());
     state_.passengers.emplace_back(id, origin, destination);
+    state_.stations[origin].passengers.push_back(id);
     return id;
 }
 
