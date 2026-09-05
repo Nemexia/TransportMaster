@@ -1,4 +1,5 @@
 #pragma once
+#include "types.h"
 
 namespace game {
 struct Passenger {

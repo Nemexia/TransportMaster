@@ -1,7 +1,10 @@
 #include "application.h"
 
+#include "../game/state.h"
+
 #include <array>
 #include <raylib.h>
+#include <string>
 
 namespace game {
 Application::Application() {
@@ -64,7 +67,7 @@ static void draw(const game::State& state) {
 void Application::render() {
     BeginDrawing();
     ClearBackground(::RAYWHITE);
-    draw(game_.state_);
+    draw(game_.state());
     EndDrawing();
 }
 } // namespace game

@@ -5,7 +5,11 @@
 #include <vector>
 
 namespace game {
-struct Route {
+class Route {
+public:
+    StopIndex next_stop(StopIndex current_stop) const;
+
+private:
     RouteId id;
     std::vector<StationId> stops;
     Color color;

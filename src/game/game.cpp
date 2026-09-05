@@ -2,6 +2,7 @@
 
 #include "color.h"
 #include "position.h"
+#include "state.h"
 #include "types.h"
 
 #include <span>
@@ -32,5 +33,9 @@ PassengerId Game::add_passenger(StationId origin, StationId destination) {
     PassengerId id = static_cast<PassengerId>(state_.passengers.size());
     state_.passengers.emplace_back(id, origin, destination);
     return id;
+}
+
+State& Game::state() {
+    return state_;
 }
 } // namespace game
